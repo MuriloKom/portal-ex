@@ -1,81 +1,29 @@
-<!--
-Author:W3layouts
-Author URL:http://w3layouts.com
-License:Creative Commons Attribution 3.0 Unported
-License URL:http://creativecommons.org/licenses/by/3.0/
---> 
-
 <!--Define o tipo de documento-->
 <!DOCTYPE HTML>
 <HTML>
-   <HEAD>
-      <!--Nome exibido na aba do navegador-->
-      <TITLE >Portal de Gerenciamento de Usuários</TITLE>
-      <!--Busca fonte para o texto-->
-      <LINK HREF="http://fonts.googleapis.com/css?family=Droid+Sans"
-         REL="stylesheet" TYPE="text/css">
-      <!--Adiciona o arquivo loginform.css que contém os estilos utilizados-->
-      <LINK HREF="/css/loginform.css" MEDIA="all" REL="stylesheet"
-         TYPE="text/css" />
-      <!--Compatibilidade com caracteres especiais-->	 
-      <META CONTENT="text/html; charset=utf-8" HTTP-EQUIV="Content-Type" />
-	  <!--Favicon-->
-   </HEAD>
-   <BODY ONLOAD="setFocus()">
-      <!--Caixa de Login-->
-      <DIV CLASS="message warning">
-         <BR> 
-         <!--Logo-->
-         <DIV CLASS="inset">
-            <DIV CLASS="login-head">
-               <H1></H1>
-               </DIV>
-            </DIV>
-            <!--Formulário de Login-->
-			<!--Ao ser enviado, redireciona para a página checklogin.php. No momento do envio, verifica se os termos de uso foram aceitos-->
-            <FORM ID="form" METHOD="post" ACTION="/php/checklogin.php"
-               ONSUBMIT="if(document.getElementById('agree').checked) { return true; } else { alert('Voce deve ler e aceitar os Termos de Uso para continuar.'); return false; }">
-               <LI>
-                  <!--Campo Login-->
-                  <INPUT CLASS="text" NAME="username"
-                     ONBLUR="if (this.value=='') {this.value='Acesso restrito a funcionários autorizados';}"
-                     ONFOCUS="this.value='';" TYPE="text" VALUE="Acesso restrito a funcionários autorizados"><P CLASS=" icon user"> </P>
-               </LI>
-               <DIV CLASS="clear"> 
-               </DIV>
-               <LI>
-                  <!--Campo Senha-->
-                  <INPUT NAME="password"
-                     ONBLUR="if (this.value=='') {this.value='Senha';}"
-                     ONFOCUS="this.value='';" TYPE="password" VALUE="Senha"> 
-                  <P CLASS="icon lock"> </P> 
-               </LI>
-                  <!--Campo Termos de Uso-->
-			   <LI CLASS="checkbox">
-				  <INPUT TYPE="checkbox" NAME="checkbox" VALUE="check" ID="agree"/>Eu li e aceito os <A HREF="/pdf/Termos_de_Uso_SBG.pdf">Termos de Uso</A>.  
-               </LI>				  
-               <!--Botão Entrar-->
-               <DIV CLASS="submit">
-               <INPUT ONCLICK="myFunction()" TYPE="submit" VALUE="Entrar"> 
-               <H4><A HREF="/php/change-password.php">Alterar minha senha</A></H4>
-               <DIV CLASS="clear"> 
-               </DIV>
-               <BR>
-               </DIV>
-            </FORM>
-         </DIV>
-      </DIV>
-      </DIV>
-      <!---Footer--->
-      <DIV CLASS="footer">
-         <BR> 		 
-         <P>  
-            Autoestudo OpenShift
-		 <BR>
-		    Design by W3layouts
-         </P>
-      </DIV>
-      <!--Efeitos JavaScript-->
-      <SCRIPT SRC="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></SCRIPT>   
-   </BODY>
+  <HEAD>
+     <!--Nome exibido na aba do navegador-->
+     <TITLE >Portal de Gerenciamento de Usuários</TITLE>
+     <!--Compatibilidade com caracteres especiais-->	 
+     <META CONTENT="text/html; charset=utf-8" HTTP-EQUIV="Content-Type" />
+  </HEAD>
+  <BODY>
+     <!--Caixa de Login-->
+     <DIV>
+       <H1>Cadastro de Usuários</H1>
+     </DIV>
+     <FORM ID="form" METHOD="post" ACTION="http://node-red-route-sandbox.apps.shared-na4.na4.openshift.opentlc.com/insertUser">
+        <!--Nome do usuário-->
+        <INPUT
+          size="40"
+           ONBLUR="if (this.value=='') {this.value='Insira aqui o nome do usuário';}"
+           ONFOCUS="this.value='';" TYPE="text" VALUE="Insira aqui o nome do usuário">
+        <!--Botão Enviar-->
+        <BR>
+        <BR>
+        <DIV CLASS="submit">
+         <INPUT ONCLICK="myFunction()" TYPE="submit" VALUE="Enviar"> 
+        </DIV>
+      </FORM>  
+  </BODY>
 </HTML>
